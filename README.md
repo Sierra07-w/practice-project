@@ -39,4 +39,4 @@ Open the app in your browser:
 http://localhost:3000
 
 Deployed Application
-You can access the live web application here: Your P https://practice-project-3ysd.onrender.com/ublic URL Here
+You can access the live web application here: https://practice-project-3ysd.onrender.com/ublic 
