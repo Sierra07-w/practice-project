@@ -34,8 +34,9 @@ MONGO_URI=mongodb+srv://Sara:1S2A3R4A@cluster0.txqxytk.mongodb.net/workouts?retr
 Start the server locally:
 
 npm start
-Open the app in your browser:https://practice-project-3ysd.onrender.com/
+Open the app in your browser:
 
 http://localhost:3000
+
 Deployed Application
-You can access the live web application here: Your Public URL Here
+You can access the live web application here: Your P https://practice-project-3ysd.onrender.com/ublic URL Here
