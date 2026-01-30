@@ -30,7 +30,7 @@ npm install
 Create a .env file in the root folder with your configuration:
 
 PORT=3000
-MONGO_URI=mongodb+srv://Sara:<YOUR_PASSWORD>@cluster0.txqxytk.mongodb.net/workouts?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://Sara:1S2A3R4A@cluster0.txqxytk.mongodb.net/workouts?retryWrites=true&w=majority
 Start the server locally:
 
 npm start
