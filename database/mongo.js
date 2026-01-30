@@ -1,19 +1,22 @@
 const { MongoClient } = require("mongodb");
 
-
-const url = "mongodb://127.0.0.1:27017";
+const url = process.env.MONGO_URI; 
 const client = new MongoClient(url);
-const dbName = "fittrack";
 
 let db;
 
 async function connectDB() {
-if (!db) {
-await client.connect();
-db = client.db(dbName);
+    if (!db) {
+        try {
+            await client.connect();
+           
+            db = client.db(); 
+            console.log("MongoDB connected");
+        } catch (err) {
+            console.error("MongoDB connection error:", err);
+        }
+    }
+    return db;
 }
-return db;
-}
-
 
 module.exports = connectDB;
