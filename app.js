@@ -3,9 +3,18 @@ require("dotenv").config()
 const express=require("express")
 const workoutsRoutes=require("./routes/workouts")
 const connectDB=require("./database/mongo")
+const session=require("express-session")
 
 const app=express()
 
+app.use(session({
+secret:"fittrack",
+resave:false,
+saveUninitialized:false,
+cookie:{
+httpOnly:true
+}
+}))
 app.use(express.json())
 app.use(express.static("frontend"))
 
