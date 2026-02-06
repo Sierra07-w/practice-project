@@ -77,6 +77,22 @@ headers:{"Content-Type":"application/json"},
 body:JSON.stringify({exercise,duration,calories,date})
 })
 
+async function login(){
+
+await fetch("/auth/login",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+email:email.value,
+password:password.value
+})
+})
+
+alert("Logged in")
+}
+
+
+
 load()
 
 }
