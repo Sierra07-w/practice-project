@@ -3,6 +3,7 @@ const { ObjectId } = require("mongodb");
 const connectDB = require("../database/mongo");
 
 const router = express.Router();
+const auth=require("../middleware/auth")
 
 router.get("/", async (req, res) => {
 try {
@@ -54,7 +55,7 @@ try {
 });
 
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
 try {
     const { exercise, duration, calories, date } = req.body;
 
@@ -79,7 +80,7 @@ try {
 });
 
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
 try {
     if (!ObjectId.isValid(req.params.id)) {
 return res.status(400).json({ message: "Invalid ID" });
@@ -108,7 +109,7 @@ return res.status(400).json({ message: "Invalid ID" });
 
 
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
 try {
     if (!ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: "Invalid ID" });
